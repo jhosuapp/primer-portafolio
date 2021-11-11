@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font: {
+        family: 'roboto', sans-serif;
+    }
+    background: $light-color;
+    transition: {
+        property: background-color;
+        duration: $transition-duration;
+    }
+    &.active{
+        background: $secondary-color;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+.orange{
+    text-transform: uppercase;
+    color: $grey-skills;
+}
+.yellow{
+    color: $sun-color;
+}

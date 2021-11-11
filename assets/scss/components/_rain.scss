@@ -1,0 +1,49 @@
+// .rain{
+//     position:relative;
+//     min-height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     &__vapour{
+//         position: absolute;
+//         width: 100%;
+//         height: 100%;
+//         animation: vapour 10s linear infinite;
+//     }
+//     &__title{
+//         position: absolute;
+//         color: $dark-color;
+//         body.active & {
+//             color: $light-color;
+//         }
+//     }
+//     i{
+//         position: absolute;
+//         width: 2px;
+//         height: 10px;
+//         top: -20px;
+//         animation: rain linear infinite;
+//         background: $dark-color;
+//         body.active & {
+//             background: $light-color;
+//         }
+//     }
+// }
+
+// @keyframes vapour {
+//     0%, 100%{
+//         backdrop-filter: blur(0);
+//     }
+//     50%{
+//         backdrop-filter: blur(2px);
+//     }
+// }
+
+// @keyframes rain {
+//     0%{
+//         top: -10px;
+//     }
+//     100%{
+//         top: 100vh;
+//     }
+// }

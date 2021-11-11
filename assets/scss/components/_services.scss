@@ -1,0 +1,117 @@
+.service{
+    width: 90%;
+    max-width: 1500px;
+    margin: auto;
+    position: relative;
+
+    body.active &{
+        color: $light-color;
+    }
+    &-ctn{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-top: 50px;
+            &__block{
+                display: flex;
+                width: 90%;
+                margin-top: 40px;
+            }
+        &__img{
+            width: 25%;
+        }
+        &__icon{
+            max-width: 90px;
+            font-size: 20px;
+            padding: 20px;
+            background: $sun-color;
+            color: $light-color;
+            z-index: 9;
+            border-radius: 100px;
+            
+            body.active &{
+                background: $light-color;
+                color: $sun-color;
+            }
+        }
+        &__information{
+            width: 75%;
+        }    
+        &__subtitle{
+            color: $sun-color;
+        }
+        &__paragraph{
+            font-size: $font-size-p;
+        }
+    }
+
+    // DESCRIPTION
+
+    &-description{
+        &__relative{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            text-align: center;
+            margin-top: $top-ancala;
+        }
+        &__icon{
+            font-size: 40px;
+            color: $sun-color;
+        }
+        &__text{
+            font-size: 20px;
+            text-transform: uppercase;
+            color: $dark-color;
+            margin-top: 20px;
+
+            body.active &{
+                color: $light-color;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1550px) {
+    .service{
+        height: auto;
+        padding-top: 0;
+    }
+}
+@media (max-width: 880px) {
+    .service{
+        height: auto;
+        padding-top: 0;
+        &-ctn{
+            grid-template-columns: 100%;
+            margin-top: 0;
+            &__img{
+                margin-right: 10px;
+            }
+        }
+        &-description{
+            &__relative{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                margin-top: 0;
+            }
+            &__icon{
+                font-size: 40px;
+            }
+            &__ctn{
+                margin-top: 30px;
+            }
+            &__text{
+                font-size: 20px;
+                text-transform: uppercase;
+                color: $sun-color;
+                margin-top: 20px;
+            }
+        }
+    
+    }
+}

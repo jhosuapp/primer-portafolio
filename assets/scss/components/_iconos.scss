@@ -1,0 +1,70 @@
+.iconos{
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    &__links{
+        text-decoration: none;
+    }
+    &--relative{
+        position: relative;
+        bottom: 0;
+    }
+}
+%icono-igual{
+    font-size: 22px;
+    color: $dark-color;
+    border: 1.8px solid $dark-color;
+    border-radius: 100px;
+    padding: 5px;
+    &:hover{
+        border-color: $sun-color;
+        color: $sun-color;
+    }
+    body.active &{
+        color: $light-color;
+        border-color: $light-color;
+        &:hover{
+            border-color: $sun-color;
+            color: $sun-color;
+        }
+    }
+    
+}
+.icono-instagram,
+.icono-likedin,
+.icono-twitter,
+.icono-telegram {
+    @extend %icono-igual;
+    &--color{
+        color: $light-color;
+        border: 1.8px solid $light-color;
+        
+        body.active &{
+            color: $dark-color;
+            border: 1.8px solid $dark-color;
+        }
+    }
+}
+
+@media (max-width: 880px) {
+    .iconos{
+        left: auto;
+        bottom: -50px;
+        &--relative{
+            position: relative;
+            bottom: 0;
+            text-align: center;
+            margin: auto;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
+
+}
+
+//ICON PRESENTATION
+  

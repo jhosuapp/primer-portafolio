@@ -1,0 +1,148 @@
+.proyects{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    row-gap: 40px;
+    column-gap: 80px;
+    max-width: 1500px;
+
+    body.active &{
+        color: $light-color;
+    }
+}
+.card{
+    margin-top: 2.5rem;
+    position: relative;
+    transition: {
+        property: margin-top, margin-bottom;
+        duration: 0.3s;
+    }
+
+    body.active &{
+        color: $dark-color;
+    }
+    &__image{
+        width: 100%;
+        cursor: pointer;
+    }
+    &__overlay{
+        position: absolute;
+        top: auto;
+        bottom: -7px;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(-180deg,rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+        transition: all 0.3s ease-in-out;
+    }
+    &__text{
+        font-size: $font-size-p;
+    }
+    &__info{
+        position: absolute;
+        top: auto;
+        bottom: 1.875rem;
+        left: 1.875rem;
+        text-align: left;
+    }
+    &:hover {
+        margin-top: 1.875rem;
+        margin-bottom: 0.625rem;
+        opacity: 1;
+        box-shadow: 0 0.9375rem 2rem 0.625rem rgb(0 0 0 / 10%);
+    }
+    &:hover .card__overlay{
+        margin-top: 1.875rem;
+        margin-bottom: 0.625rem;
+        opacity: 1;
+        box-shadow: 0 0.9375rem 2rem 0.625rem rgb(0 0 0 / 10%);
+        z-index: 99;
+        cursor: pointer;
+    }
+    &__icon{
+        color: $light-color;
+        cursor: pointer;
+        font-size: 40px;
+        position: absolute;
+        margin-top: 20px;
+        opacity: 0;
+        z-index: -9;
+        transition: {
+            duration: $transition-duration;
+            property: opacity;
+        }
+    }
+    //MODAL
+
+    &.active {
+        margin: 0;
+        transition: all 0.4s;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        z-index: 99;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background: rgb(0, 0, 0, 0.25);
+        top: 0;
+        left: 0;
+        z-index: 10;
+        opacity: 1;
+        transition: {
+            property: all;
+            duration: $transition-duration;
+        }
+    }
+    &.active .card__icon{
+        color: $light-color;
+        cursor: pointer;
+        font-size: 40px;
+        position: absolute;
+        margin-top: 20px;
+        opacity: 1;
+        cursor: pointer;
+    }
+    &.active .card__overlay{    
+        display: none;
+    }
+
+    &.active .card__image{
+        position: fixed;
+        max-width: 900px;
+        height: 600px;
+        top: calc(50% - 300px);
+        left: calc(50% - 450px);
+        z-index: 9;
+    }
+
+}
+@media (max-width: 880px){
+    .proyects{
+        gap: 0;
+        height: auto;
+        padding-top: 0;
+    }
+    .card{
+        grid-column: 1/4;
+        &__overlay{
+           
+            width: 100%;
+            height: 100%;
+        }
+        &.active .card__image{
+            position: fixed;
+            width: 80%;
+            max-width: 900px;
+            height: auto;
+            top: calc(50% - 100px);
+            left: auto;
+            z-index: 9;
+    }
+    }
+    
+}

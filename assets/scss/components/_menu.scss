@@ -1,0 +1,147 @@
+.#{$brand-menu}{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: $primary-color;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: {
+        property: background-color;
+        duration: $transition-duration;
+    }
+    padding: {
+        top: 10px;
+        bottom: 10px;
+    }
+
+    body.active & {
+        background:  $light-color;
+    }
+    &__hamburguesa{
+        display: none;
+    }
+    &__firts-block{
+        width: 30%;
+    }
+    &__img{
+        width: 100%;
+        max-width: 150px;
+        display: flex;
+        font-size: 50px;
+        margin: {
+            left:40px;
+        }
+        &:hover{
+            opacity: 0.6;
+            cursor: pointer;
+        }
+    }
+    &__second-block{
+        width: 70%;
+        display: flex;
+        gap:40px;
+        justify-content: flex-end;
+        margin: {
+            right: 40px;
+        }
+    }
+    &__link{
+        text-decoration: none;
+    }
+    &__list{
+        list-style: none;
+        text-transform: uppercase;
+        position: relative;
+        color: $light-color;
+        font: {
+            size: 1rem;
+            weight: 600;
+        }
+        body.active & {
+            color:  $dark-color;
+            &::after {
+                background: $secondary-color;
+            }
+        }
+        &::after{
+            content: '';
+            width: 0;
+            height: 2px;
+            background: $light-color;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: {
+                property: width;
+                duration: 0.4s;
+            }
+        }
+        &:hover::after{
+            width: 100%;
+        }
+    }
+}
+
+//STICKY OF MENU
+
+.sticky{
+    position: relative;
+}
+
+@media (max-width: 880px) {
+    
+    .#{$brand-menu}{
+        position: fixed;
+        &.active{
+            display: none;
+        }
+        &__firts-block{
+            width: 30%;
+        }
+        &__img{
+            max-width: 150px;
+            min-width: 150px;
+        }
+        &__second-block{
+            width: 100vw;
+            height: 88vh;
+            position: absolute;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: 88.5px;
+            left: -1000px;
+            background: $dark-color;
+            z-index: 9999;
+            transition: {
+                property: left;
+                duration: $transition-duration;
+            }
+            body.active &{
+                background: $light-color;
+            }
+        }
+        &__second-block.active{
+            left: 0;
+            opacity: 0.9;
+        }
+    }
+    .sticky{
+        margin-top: 100px;
+    }
+}
+@media (max-width: 500px) {
+    .#{$brand-menu}{
+        &__img{
+            margin: {
+                left: 20px;
+            }
+        }
+        &__hamburguesa{
+            margin: {
+                right: 20px;
+            }
+        }
+    }
+}

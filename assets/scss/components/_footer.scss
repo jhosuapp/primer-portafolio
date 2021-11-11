@@ -1,0 +1,33 @@
+.footer{
+    width: 100%;
+    background: $primary-color;
+    padding: {
+        top: 50px;
+        bottom: 50px
+    }
+    color: $light-color;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: $top-ancala;
+    body.active &{
+        background: $light-color;
+        color: $dark-color;
+    }
+}
+
+
+@media (max-width: 880px){
+    .footer{
+        display: block;
+        position: relative;
+        z-index: 999;
+        &__contenido{
+            width: 90%;
+            margin: auto;
+            text-align: center;
+
+        }
+    }
+
+}

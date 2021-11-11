@@ -1,0 +1,110 @@
+.form{
+    width: 90%;
+    margin: auto;
+    max-width: 1500px;
+    body.active &{
+        color: $light-color;
+    }
+    &-ctn{
+        width: 80%;
+        margin: auto;
+        margin-top: 80px;
+        display: flex;
+        &__block-text{
+            width: 50%;
+            margin-right: 50px;
+        }
+        &__form{
+            width: 50%;
+        }
+        &__block{
+            margin-bottom: 60px;
+            width: 100%;
+            position: relative;
+            &--flex{
+                display: flex;
+                margin: auto;
+            }
+        }
+        &__input{
+            width: 100%;
+            outline: inherit;
+            border: none;
+            border-bottom: 2px solid $dark-color;
+            color: $sun-color;
+            font-size: 18px;
+            resize: none;
+            background: transparent;
+            &--right{
+                border-right: 2px solid $dark-color;
+                border-bottom-right-radius: 15px;
+                body.active &{
+                    border-right: 2px solid $light-color;
+                }
+            }
+            body.active &{
+                background: transparent;
+                border-bottom: 2px solid $light-color;
+            }
+        }
+        &__text{
+            opacity: 0.7;
+            position: absolute;
+            left: 5px;
+            top: -10px;
+            font-size: 18px;
+            transition: all 0.5s;
+            resize: none;
+            pointer-events: none;
+            &--mensaje{
+                position: absolute;
+                opacity: 0.7;
+                left: 5px;
+                top: -10px;
+                font-size: 18px;
+                transition: all 0.5s;
+                body.active &{
+                    color: $light-color;
+                }
+            }
+            body.active &{
+                color: $light-color;
+            }
+        }
+    }
+}
+
+//UP WORDS
+
+.form-ctn__block{
+    &.color .form-ctn__text--nombre,
+    &.color .form-ctn__text--email,
+    &.color .form-ctn__text--mensaje{
+        top: -25px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 880px){
+    .form{
+        &-ctn{
+            margin-top: 20px;
+            width: 100%;
+            flex-wrap: wrap;
+            &__form{
+                width: 100%;
+            }
+            &__block{
+                display: flex;
+                justify-content: center;
+            }
+            &__block-text{
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+                margin-bottom: 60px;
+            }
+        }
+
+    }
+}

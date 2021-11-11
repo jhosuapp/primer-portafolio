@@ -1,0 +1,128 @@
+.hamburger{
+    display: none;
+}
+.hamburger__button{
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+}
+.hamburger__top-line,
+.hamburger__middle-line,
+.hamburger__bottom-line{
+    border-radius: 5px;
+    background: $sun-color;
+    display: block;
+    width: 70%;
+    margin: 5px auto;
+    height: 5px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transition: {
+        property: background-color;
+        duration: $transition-duration;
+    }
+}
+#hamburger.open button .hamburger__top-line{
+    animation-name: top-line-animation;
+}
+#hamburger.open button .hamburger__middle-line{
+    animation-name: middle-line-animation;
+}
+#hamburger.open button .hamburger__bottom-line{
+    animation-name: bottom-line-animation;
+}
+#hamburger button .hamburger__top-line{
+    animation-name: top-line-animation-close;
+}
+#hamburger button .hamburger__middle-line{
+    animation-name: middle-line-animation-close;
+}
+#hamburger button .hamburger__bottom-line{
+    animation-name: bottom-line-animation-close;
+}
+@keyframes top-line-animation{
+    50%, 100%{
+        margin: 0 auto;
+        transform: translateY(5px) rotate(-45deg);
+    }
+}
+@keyframes middle-line-animation{
+    20%, 100%{
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+}
+@keyframes bottom-line-animation{
+    50%, 100%{
+        margin: 0 auto;
+        transform: translateY(-5px) rotate(45deg);
+    }
+}
+@keyframes top-line-animation-close{
+    0%{
+        margin: 0 auto;
+        transform: translateY(5px) rotate(-45deg);
+    }
+    50%, 100%{
+        margin: 5px auto;
+        transform: translateY(0) rotate(0);
+    }
+}
+@keyframes middle-line-animation-close{
+    0%{
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+    20%, 100%{
+        margin: 0 auto;
+        width: 70%;
+        opacity: 1;
+    }
+}
+@keyframes bottom-line-animation-close{
+    0%{
+        margin: 0 auto;
+        transform: translateY(-5px) rotate(45deg);
+    }
+    50%, 100%{
+        margin: 5px auto;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 880px){
+    .hamburger{
+        display: block;
+        position: absolute;
+        right: 10px;
+    }
+    @keyframes top-line-animation{
+        50%, 100%{
+            margin: 0 auto;
+            transform: translateY(5px) rotate(-45deg);
+            background: $sun-color;
+        }
+    }
+    @keyframes middle-line-animation{
+        20%, 100%{
+            margin: 0 auto;
+            width: 0;
+            opacity: 0;
+        }
+    }
+    @keyframes bottom-line-animation{
+        50%, 100%{
+            background: $sun-color;
+            margin: 0 auto;
+            transform: translateY(-5px) rotate(45deg);
+        }
+    }
+}

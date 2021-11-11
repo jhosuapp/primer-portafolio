@@ -1,0 +1,13 @@
+// @mixin flex ($dp: flex, $jc: center, $ai: center){
+//     display: $dp;
+//     justify-content: $jc;
+//     align-items: $ai;
+//     background: darken($color: $color, $amount: 10);
+// }
+
+@mixin darken ($color: $light-color){
+    background: darken($color: $color, $amount: 40);
+}
+@mixin transition ($p, $td: $transition-duration, $timing: ease){
+    transition: $p $td $timing;
+}

@@ -1,0 +1,96 @@
+
+.ctn-cookies{
+    position: fixed;
+    width: 100%;
+    max-width: 290px;
+    left: 20px;
+    bottom: 20px;
+    z-index: 11;
+    transition: {
+        property: opacity;
+        duration: $transition-duration;
+    }
+    &.active{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+.cookies{
+    height: auto;
+    background: $light-color;
+    position: relative;
+    padding: {
+        left: 20px;
+        right: 20px;
+        top: 60px;
+        bottom: 20px;
+    }
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    &__img{
+        width: 100px;
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 50px);
+    }
+    &__titulo{
+        color: $sun-color;
+        font-size: 20px;
+        margin: {
+            bottom: 10px;
+        }
+    }
+    &__parrafo{
+        color: $strong-gray;
+        margin: {
+            bottom: 10px;
+        }
+    }
+    &__boton {
+        outline: inherit;
+        border: none;
+        border-radius: 5px;
+        background: $strong-gray;
+        padding: 10px;
+        margin: auto;
+        width: 100%;
+        margin-bottom: 10px;
+
+        &:hover{
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        span{
+            font-size: 15px;
+            color: $light-color;
+        }
+    }
+    &__link{
+        text-decoration: underline;
+        font-size: 12px;
+        color: $sun-color;
+        cursor: pointer;
+    }
+}
+.cookies__opacity {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgb(0, 0, 0, 0.25);
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 1;
+    transition: {
+        property: all;
+        duration: $transition-duration;
+    }
+    &.active{
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,50 @@
+.dark{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    &__button{
+        position: relative;
+        width: 100%;
+        max-width: 100px;
+        background-color: $sun-color;
+        border: none;
+        outline: inherit;
+        border-radius: 100px;
+        padding: 30px;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: {
+            property: background-color;
+            duration: 0.3s;
+        }
+        &.active{
+            background: $moon-color;
+        }
+    }
+    &__item-one, &__item-two{
+        font-size: 20px;
+        position: absolute;
+        transition: {
+            property: background-color, opacity;
+            duration: 0.3s;
+        }
+    } 
+    &__item-one{
+        opacity: 1;
+        color: $light-color;
+    }
+    &__item-one.active{
+        opacity: 0;
+    }
+    &__item-two{
+        opacity: 0;
+        color: $primary-color;
+    }
+    &__item-two.active{
+        opacity: 1;
+    }
+}
